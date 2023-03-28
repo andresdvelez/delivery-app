@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { sliderData } from "./data";
+import { motion } from "framer-motion";
 
 function Slider() {
   const [count, setCount] = React.useState(0);
@@ -12,8 +13,13 @@ function Slider() {
   };
 
   return (
-    <section className="w-screen h-screen p-5">
-      <aside>
+    <section className="w-screen h-screen p-5 relative">
+      <motion.div
+        key={count}
+        initial={{ x: 100 }}
+        animate={{ x: 0 }}
+        exit={{ x: -100 }}
+      >
         <figure>
           <Image
             width={80}
@@ -22,7 +28,7 @@ function Slider() {
           />
         </figure>
         <p>{sliderData[Math.abs(count) % 3].text}</p>
-      </aside>
+      </motion.div>
       {/* Pagination icons */}
       <button
         className="bg-main-color rounded-xl h-10 w-full"
