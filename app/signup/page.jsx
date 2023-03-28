@@ -1,12 +1,7 @@
 import React from "react";
-import Slider from "@/components/slider/Slider";
 
 function SignUp() {
-  return (
-    <>
-      <Slider />
-    </>
-  );
+  return <div>signup</div>;
 }
 
 export default SignUp;
