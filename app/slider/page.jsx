@@ -28,9 +28,9 @@ function Slider() {
         initial={{ x: 100 }}
         animate={{ x: 0 }}
         exit={{ x: -100 }}
-        className="flex flex-col mb-56 mt-20"
+        className="flex flex-col gap-2 mb-56 mt-20"
       >
-        <figure className="w-screen flex justify-center mb-11">
+        <figure className="w-screen h-80 flex justify-center">
           <Image
             width={300}
             height={300}
