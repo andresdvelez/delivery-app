@@ -42,45 +42,47 @@ function Slider() {
           {sliderData[count].text}
         </p>
       </motion.div>
-      <div className="flex items-center gap-3 justify-center mb-4">
-        <figure>
-          <Image src={circle} />
-        </figure>
-        <motion.figure
-          className="absolute"
-          animate={
-            count === 0
-              ? "initial"
-              : count === 1
-              ? "second"
-              : count === 2
-              ? "third"
-              : ""
-          }
-          variants={variants}
-        >
-          <Image src={activeFigure} />
-        </motion.figure>
-        <figure>
-          <Image src={circle} />
-        </figure>
-        <figure>
-          <Image src={circle} />
-        </figure>
-      </div>
-      <div className="px-4">
-        {count === 2 ? (
-          <button className="bg-main-color rounded-xl h-10 w-full">
-            <Link href="/signin">Next</Link>
-          </button>
-        ) : (
-          <button
-            className="bg-main-color rounded-xl h-10 w-full"
-            onClick={handleNext}
+      <div className="absolute w-screen bottom-12">
+        <div className="flex items-center gap-3 justify-center mb-4">
+          <figure>
+            <Image src={circle} />
+          </figure>
+          <motion.figure
+            className="absolute"
+            animate={
+              count === 0
+                ? "initial"
+                : count === 1
+                ? "second"
+                : count === 2
+                ? "third"
+                : ""
+            }
+            variants={variants}
           >
-            Next
-          </button>
-        )}
+            <Image src={activeFigure} />
+          </motion.figure>
+          <figure>
+            <Image src={circle} />
+          </figure>
+          <figure>
+            <Image src={circle} />
+          </figure>
+        </div>
+        <div className="px-4">
+          {count === 2 ? (
+            <button className="bg-main-color rounded-xl h-10 w-full relative">
+              <Link className="absolute bottom-0 top-2 right-0 w-full h-full" href="/signin">Next</Link>
+            </button>
+          ) : (
+            <button
+              className="bg-main-color rounded-xl h-10 w-full"
+              onClick={handleNext}
+            >
+              Next
+            </button>
+          )}
+        </div>
       </div>
     </section>
   );
