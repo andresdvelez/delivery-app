@@ -7,7 +7,7 @@ function SignIn() {
     <section className="flex flex-col justify-between px-4 py-14 h-screen w-screen">
       <div className="flex flex-col items-center">
         <figure className="w-24 h-16 mb-6">
-          <Image src={Logo} />
+          <Image src={Logo} alt="Logo" />
         </figure>
         <h3 className="text-dark text-xl mb-3">Sign in</h3>
         <p className="text-dark text-sm w-56 text-center mb-8">

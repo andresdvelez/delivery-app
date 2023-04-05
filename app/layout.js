@@ -1,7 +1,3 @@
-export const metadata = {
-  title: "Delivery app",
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
