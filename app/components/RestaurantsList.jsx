@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { useFetchRestaurants } from "../hooks/useFetchRestaurants";
 
@@ -10,7 +10,11 @@ function RestaurantsList() {
   return (
     <ul className="flex flex-col gap-3 mt-8 ">
       {restaurants?.map((restaurant) => (
-        <li key={restaurant?.id} className="flex items-center cursor-pointer hover:bg-slate-100 rounded-xl">
+        <Link
+          href={`/restaurants/${restaurant?.id}`}
+          key={restaurant?.id}
+          className="flex items-center cursor-pointer hover:bg-slate-100 rounded-xl"
+        >
           <img
             className="restaurantImg"
             src={restaurant?.img}
@@ -31,7 +35,7 @@ function RestaurantsList() {
               </p>
             </div>
           </div>
-        </li>
+        </Link>
       ))}
     </ul>
   );

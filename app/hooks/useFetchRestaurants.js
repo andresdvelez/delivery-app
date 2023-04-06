@@ -24,7 +24,6 @@ export const useFetchRestaurants = () => {
         return () => unsubscribe();
       } catch (error) {
         setError("Failed to load restaurants");
-        console.log(error);
       } finally {
         setLoading(false);
       }
@@ -32,4 +31,30 @@ export const useFetchRestaurants = () => {
     fetchRestaurants();
   }, []);
   return { loading, error, restaurants };
+};
+
+export const getRestaurantById = (id) => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [restaurant, setRestaurant] = useState(null);
+
+  useEffect(() => {
+    async function fetchRestaurant() {
+      try {
+        const q = query(collection(db, "restaurants", "id", id));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+          const restaurant = querySnapshot.docs[0].data();
+          setRestaurant(restaurant);
+          console.log(querySnapshot.docs[0].data());
+        });
+        unsubscribe();
+      } catch (err) {
+        setError("Failed to load restaurant");
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchRestaurant();
+  }, []);
+  return { loading, error, restaurant };
 };
