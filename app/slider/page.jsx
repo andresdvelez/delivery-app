@@ -45,7 +45,7 @@ function Slider() {
       <div className="absolute w-screen bottom-12">
         <div className="flex items-center gap-3 justify-center mb-4">
           <figure>
-            <Image src={circle} />
+            <Image src={circle} alt="Circle" />
           </figure>
           <motion.figure
             className="absolute"
@@ -60,13 +60,13 @@ function Slider() {
             }
             variants={variants}
           >
-            <Image src={activeFigure} />
+            <Image src={activeFigure} alt="Image" />
           </motion.figure>
           <figure>
-            <Image src={circle} />
+            <Image src={circle} alt="Circle" />
           </figure>
           <figure>
-            <Image src={circle} />
+            <Image src={circle} alt="Circle" />
           </figure>
         </div>
         <div className="px-4">
