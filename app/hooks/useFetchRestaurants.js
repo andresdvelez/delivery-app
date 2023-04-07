@@ -54,3 +54,8 @@ export const useGetRestaurantById = (id) => {
   }, [id]);
   return { loading, error, restaurant };
 };
+
+export const getDish = (dishes, id) => {
+  const dish = dishes?.find((dish) => dish.id === id);
+  return dish;
+}

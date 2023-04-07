@@ -9,8 +9,6 @@ function Restaurant({ params }) {
 
   const restaurant = useGetRestaurantById(id);
 
-  console.log(restaurant?.restaurant);
-
   const filters = [
     {
       id: 1,
@@ -33,8 +31,6 @@ function Restaurant({ params }) {
       label: "Drinks",
     },
   ];
-
-  console.log(restaurant?.restaurant?.dishes);
 
   return (
     <section className="px-4 pt-9">
@@ -75,7 +71,7 @@ function Restaurant({ params }) {
           })}
         </ul>
       </header>
-      <DishesList dishes={restaurant?.restaurant?.dishes} />
+      <DishesList dishes={restaurant?.restaurant?.dishes} urlId={id} />
     </section>
   );
 }
