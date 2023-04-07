@@ -72,7 +72,12 @@ function Slider() {
         <div className="px-4">
           {count === 2 ? (
             <button className="bg-main-color rounded-xl h-10 w-full relative">
-              <Link className="absolute bottom-0 top-2 right-0 w-full h-full" href="/signin">Next</Link>
+              <Link
+                className="absolute bottom-0 top-2 right-0 w-full h-full"
+                href="/signin"
+              >
+                Next
+              </Link>
             </button>
           ) : (
             <button
