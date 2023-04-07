@@ -4,9 +4,33 @@
 
 .initial-form {
   background: rgba(255, 224, 49, 0.042);
-  box-shadow: 0 8px 22px 0 rgba(31, 38, 135, 0.20);
+  box-shadow: 0 8px 22px 0 rgba(31, 38, 135, 0.2);
   backdrop-filter: blur(4.5px);
   -webkit-backdrop-filter: blur(4.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.restaurantImg {
+  clip-path: polygon(100% 0, 100% 12%, 64% 100%, 0% 100%, 0 48%, 0% 0%);
+  border-radius: 10px;
+  height: 100px;
+  width: 130px;
 }
