@@ -1,7 +1,7 @@
 "use client";
 
 import { db } from "@/firebase";
-import { collection, onSnapshot, query } from "firebase/firestore";
+import { collection, doc, getDoc, onSnapshot, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
 export const useFetchRestaurants = () => {
@@ -41,13 +41,9 @@ export const useGetRestaurantById = (id) => {
   useEffect(() => {
     async function fetchRestaurant() {
       try {
-        const q = query(collection(db, "restaurants", "id", id));
-        const unsubscribe = onSnapshot(q, (querySnapshot) => {
-          const restaurant = querySnapshot.docs[0].data();
-          setRestaurant(restaurant);
-          console.log(querySnapshot.docs[0].data());
-        });
-        unsubscribe();
+        const itemRef = doc(db, "restaurants", id);
+        const docSnap = await getDoc(itemRef);
+        setRestaurant(docSnap.data());
       } catch (err) {
         setError("Failed to load restaurant");
       } finally {
