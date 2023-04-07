@@ -1,5 +1,6 @@
 "use client";
 
+import DishesList from "@/app/components/DishesList";
 import { useGetRestaurantById } from "@/app/hooks/useFetchRestaurants";
 import React from "react";
 
@@ -32,6 +33,8 @@ function Restaurant({ params }) {
       label: "Drinks",
     },
   ];
+
+  console.log(restaurant?.restaurant?.dishes);
 
   return (
     <section className="px-4 pt-9">
@@ -72,6 +75,7 @@ function Restaurant({ params }) {
           })}
         </ul>
       </header>
+      <DishesList dishes={restaurant?.restaurant?.dishes} />
     </section>
   );
 }
