@@ -6,7 +6,7 @@ import React from "react";
 import map from "@/public/map.png";
 import { useRouter } from "next/navigation";
 
-function location() {
+function Location() {
   const router = useRouter();
 
   const handleSubmit = () => {
@@ -34,4 +34,4 @@ function location() {
   );
 }
 
-export default location;
+export default Location;
