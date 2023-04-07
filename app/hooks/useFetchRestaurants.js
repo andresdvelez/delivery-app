@@ -33,7 +33,7 @@ export const useFetchRestaurants = () => {
   return { loading, error, restaurants };
 };
 
-export const getRestaurantById = (id) => {
+export const useGetRestaurantById = (id) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [restaurant, setRestaurant] = useState(null);
@@ -55,6 +55,6 @@ export const getRestaurantById = (id) => {
       }
     }
     fetchRestaurant();
-  }, []);
+  }, [id]);
   return { loading, error, restaurant };
 };
