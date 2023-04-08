@@ -33,7 +33,7 @@ function Dish({ params }) {
   ];
 
   return (
-    <section>
+    <section className="flex flex-col h-screen">
       {dish && (
         <>
           <img className="borderBottom mb-4" src={dish?.img} alt={dish?.name} />
@@ -65,7 +65,13 @@ function Dish({ params }) {
                           {ingredient.label}
                         </p>
                       </div>
-                      <p className={`${ ingredient.selected ? 'text-[#FFE031]' : 'text-dark'}`}>+{ingredient.price}$</p>
+                      <p
+                        className={`${
+                          ingredient.selected ? "text-[#FFE031]" : "text-dark"
+                        }`}
+                      >
+                        +{ingredient.price}$
+                      </p>
                     </li>
                   );
                 })}
@@ -74,6 +80,17 @@ function Dish({ params }) {
           </div>
         </>
       )}
+      <div className="flex gap-4 w-full justify-around h-full mb-8 items-end">
+        <div className="bg-white h-11 rounded-xl flex items-center px-4 gap-8">
+          <button className="text-dark text-xl">-</button>
+          <p className="text-dark text-xl">1</p>
+          <button className="text-dark text-xl">+</button>
+        </div>
+        <button className="bg-main-color rounded-xl h-11 flex items-center gap-20 px-4">
+          <p className="text-dark text-sm">Add</p>
+          <p className="text-dark text-xl font-light">$14.00</p>
+        </button>
+      </div>
     </section>
   );
 }

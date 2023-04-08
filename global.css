@@ -17,6 +17,7 @@ ul {
 
 input {
   outline: none;
+  background-color: transparent;
   border-top: none;
   border-left: none;
   border-right: none;
