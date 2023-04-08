@@ -1,21 +1,21 @@
-import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-import Dish from "/public/restaurant/dish-1.png";
 
-function DishesList({ dishes }) {
-  console.log(dishes);
-
+function DishesList({ dishes, urlId }) {
   return (
-    <ul className="w-full overflow-y-scroll mt-12 flex flex-wrap">
+    <ul className="w-full overflow-y-scroll mt-12 flex flex-wrap gap-x-4 gap-y-3">
       {dishes?.map((dish) => (
-        <li
-          key={dish.id}
-          className="rounded-xl p-2 shadow-md flex flex-col gap-2"
-        >
-          <Image className="rounded-xl" src={Dish} alt={dish.name} />
-          <p className="text-sm text-dark">{dish.name}</p>
-          <p className="text-[#A7A7A7]">{dish.price}</p>
-        </li>
+        <Link key={dish.id} href={`/restaurants/${urlId}/${dish?.id}`}>
+          <li className="rounded-xl p-2 dish flex flex-col gap-2 w-[170px] h-[180px]">
+            <img
+              className="rounded-xl w-full h-[110px] bg-cover object-cover"
+              src={dish?.img}
+              alt={dish.name}
+            />
+            <p className="text-sm text-dark">{dish.name}</p>
+            <p className="text-[#A7A7A7]">{dish.price}</p>
+          </li>
+        </Link>
       ))}
     </ul>
   );
