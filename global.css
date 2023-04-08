@@ -38,3 +38,7 @@ button {
 .dish {
   box-shadow: inset 0px 0px 4px -1px rgba(0, 0, 0, 0.1);
 }
+
+.borderBottom {
+  border-radius: 0px 0px 10px 10px;
+}
