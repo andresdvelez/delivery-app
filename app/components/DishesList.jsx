@@ -2,15 +2,11 @@ import Link from "next/link";
 import React from "react";
 
 function DishesList({ dishes, urlId }) {
-
   return (
     <ul className="w-full overflow-y-scroll mt-12 flex flex-wrap gap-x-4 gap-y-3">
       {dishes?.map((dish) => (
-        <Link href={`/restaurants/${urlId}/${dish?.id}`}>
-          <li
-            key={dish.id}
-            className="rounded-xl p-2 dish flex flex-col gap-2 w-[170px] h-[180px]"
-          >
+        <Link key={dish.id} href={`/restaurants/${urlId}/${dish?.id}`}>
+          <li className="rounded-xl p-2 dish flex flex-col gap-2 w-[170px] h-[180px]">
             <img
               className="rounded-xl w-full h-[110px] bg-cover object-cover"
               src={dish?.img}
